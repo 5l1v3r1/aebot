@@ -1,5 +1,6 @@
 FROM node
 
+RUN npm install facebook-chat-api
 ADD ./app/ /app
 ADD ./aemodules/ /aemodules
 ADD ./configs/ /configs

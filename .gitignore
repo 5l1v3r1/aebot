@@ -2,3 +2,5 @@ node_modules/
 
 package-lock.json
 appstate.json
+config.json
+threads.json
