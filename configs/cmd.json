@@ -1,0 +1,32 @@
+{
+    "0": {
+        "name": "help",
+        "type": "interactive",
+        "command": "help",
+        "response": []
+    },
+    "1": {
+        "name": "greet",
+        "type": "interactive",
+        "command": "hello aebot",
+        "response": []
+    },
+    "2": {
+        "name": "power_control",
+        "type": "interactive",
+        "command": "/power",
+        "response": []
+    },
+    "3": {
+        "name": "troll_hieu",
+        "type": "listener",
+        "command": "None",
+        "response": []
+    },
+    "4": {
+        "name": "troll_duy",
+        "type": "listener",
+        "command": "None",
+        "response": []
+    }
+}
