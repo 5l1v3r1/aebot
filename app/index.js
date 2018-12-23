@@ -3,6 +3,7 @@ const login = require("facebook-chat-api");
 const power_control = require("../aemodules/power_control.js");
 const troll_duy = require("../aemodules/troll_duy.js");
 const troll_hieu = require("../aemodules/troll_hieu.js");
+const help_module = require("../aemodules/help.js");
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -15,7 +16,7 @@ global.threads = JSON.parse(fs.readFileSync('../configs/threads.json', 'utf8'));
 
 var logged_in = fs.existsSync('../configs/appstate.json');
 var creds = { email: process.env.FBEMAIL, password: process.env.FBPASSWD };
-let moduleList = [power_control, troll_duy, troll_hieu];
+let moduleList = [power_control, troll_duy, troll_hieu, help_module];
 
 if (logged_in) {
     creds = { appState: JSON.parse(fs.readFileSync('../configs/appstate.json', 'utf8')) };
