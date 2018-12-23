@@ -11,11 +11,13 @@ function response(api, message) {
     }
 
     var params = command.split(" ")[1];
+    var getThreadInfoCallback = (err, info) => {
+        api.sendMessage("```" + JSON.stringify(info), info.threadID);
+    };
 
     switch(params) {
         case "getthreadinfo":
-            let threadInfo = api.getThreadInfo(message.threadID);
-            api.sendMessage(threadInfo, message.threadID);
+            api.getThreadInfo(message.threadID, getThreadInfoCallback)
             break;
         default:
             break;
