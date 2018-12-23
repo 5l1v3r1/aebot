@@ -12,7 +12,7 @@ function response(api, message) {
 
     var params = command.split(" ")[1];
     var getThreadInfoCallback = (err, info) => {
-        api.sendMessage("```" + JSON.stringify(info), info.threadID);
+        api.sendMessage("```" + JSON.stringify(info) + "```", info.threadID);
     };
 
     switch(params) {
