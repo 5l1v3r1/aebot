@@ -20,7 +20,7 @@ global.threads = JSON.parse(fs.readFileSync('../configs/threads.json', 'utf8'));
 
 var logged_in = fs.existsSync('../configs/appstate.json');
 var creds = { email: process.env.FBEMAIL, password: process.env.FBPASSWD };
-let moduleList = [power_control, troll_duy, troll_hieu, help_module, admin_module, reminder, greet, library];
+let moduleList = [power_control, troll_duy, troll_hieu, help_module, reminder];
 
 if (logged_in) {
     creds = { appState: JSON.parse(fs.readFileSync('../configs/appstate.json', 'utf8')) };
