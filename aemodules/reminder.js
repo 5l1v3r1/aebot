@@ -12,11 +12,11 @@ function response(api, message) {
         return;
     }
 
-    var params = command.split(" ")[1].split("/");
+    var params = command.substring(cmd.length + 1).split("/");
     var task = {
-        attendants: params[0],
-        description: params[1],
-        time: params[2]
+        attendants: params[0] || "",
+        description: params[1] || "",
+        time: params[2] || ""
     }
 
     var reminderFunction = (text) => {
@@ -25,7 +25,7 @@ function response(api, message) {
 
     if (task.time.startsWith("in ")) {
         var currentTime = new Date();
-        var t = time.split(" ");
+        var t = task.time.split(" ");
         for (var token = 1; token < t.length; token += 2) {
             switch (t[token + 1].substring(0, 3)) {
                 case "sec":
@@ -46,7 +46,7 @@ function response(api, message) {
         }
         schedule.scheduleJob(currentTime, reminderFunction.bind(null, "Hey " + task.attendants + ", " + task.description));
     } else if (task.time.startsWith("at ")) {
-
+        api.sendMessage("unimplemented", message.threadID);
     } else {
         api.sendMessage("/remind <who>/<what>/<in <duration>/at <time>>", message.threadID);
     }
