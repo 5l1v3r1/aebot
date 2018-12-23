@@ -1,16 +1,16 @@
 function response(api, message) {
-    let cmd = "/power"
     if (global.configs.isAdmin.indexOf(message.senderID) == -1) {
         return;
     }
 
-    command = message.body;
+    let command = message.body;
+    let cmd = "/power"
 
     if (!command.startsWith(cmd)) {
         return;
     }
     
-    var params = command.substring(cmd.length + 1, command.length);
+    var params = command.split(" ")[1];
 
     if (params == "on") {
         global.configs.power_status = 1;

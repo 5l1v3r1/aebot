@@ -1,6 +1,6 @@
 FROM node
 
-RUN npm install facebook-chat-api
+RUN npm install facebook-chat-api node-schedule
 ADD ./app/ /app
 ADD ./aemodules/ /aemodules
 ADD ./configs/ /configs
