@@ -10,4 +10,4 @@ WORKDIR /
 
 ENV FBEMAIL="someemail@example.com"
 ENV FBPASSWD="somepassword"
-CMD node /app/index.js
+CMD npm start
