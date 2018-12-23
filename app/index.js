@@ -35,6 +35,10 @@ login(creds, (err, api) => {
     }
 
     api.listen((err, message) => {
+        if (err != null) {
+            return;
+        }
+        
         if (message.threadID in global.threads) {
             for (i in moduleList) {
                 moduleList[i].response(api, message);
