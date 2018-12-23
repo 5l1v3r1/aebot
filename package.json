@@ -1,0 +1,24 @@
+{
+  "name": "aebot",
+  "version": "1.0.0",
+  "description": "Like slackbot, but for Facebook Messenger",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducphanduyagentp/aebot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ducphanduyagentp/aebot/issues"
+  },
+  "homepage": "https://github.com/ducphanduyagentp/aebot#readme",
+  "dependencies": {
+    "facebook-chat-api": "^1.6.0"
+  }
+}
