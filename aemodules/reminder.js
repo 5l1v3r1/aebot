@@ -19,6 +19,10 @@ function response(api, message) {
         time: params[2]
     }
 
+    var reminderFunction = (text) => {
+        api.sendMessage(text, message.threadID);
+    };
+
     if (task.time.startsWith("in ")) {
         var currentTime = new Date();
         var t = time.split(" ");
@@ -40,6 +44,7 @@ function response(api, message) {
                     break
             }
         }
+        schedule.scheduleJob(currentTime, reminderFunction.bind(null, "Hey " + task.attendants + ", " + task.description));
     } else if (task.time.startsWith("at ")) {
 
     } else {
