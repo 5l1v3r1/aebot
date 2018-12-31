@@ -17,6 +17,7 @@ function getRandomInt(min, max) {
 
 global.configs = JSON.parse(fs.readFileSync('../configs/config.json', 'utf8'));
 global.threads = JSON.parse(fs.readFileSync('../configs/threads.json', 'utf8'));
+global.trollLimit = 7 * 60 * 1000; // 7 minutes
 
 var logged_in = fs.existsSync('../configs/appstate.json');
 var creds = { email: process.env.FBEMAIL, password: process.env.FBPASSWD };
