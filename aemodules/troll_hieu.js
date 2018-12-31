@@ -13,6 +13,7 @@ function response(api, message) {
     }
     
     if (message.senderID == HieuID) {
+        lastTrollHieu = new Date();
         api.sendMessage(messageList[0], message.threadID);
     }
 }
